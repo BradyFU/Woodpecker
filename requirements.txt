@@ -1,0 +1,14 @@
+gradio==3.44.4
+numpy==1.23.5
+openai==0.28.0
+opencv_python==4.8.0.76
+Pillow==10.0.1
+shortuuid==1.0.11
+spacy==3.6.1
+supervision==0.6.0
+torch==1.13.1
+torchvision==0.14.1
+tqdm==4.66.1
+transformers==4.29.0
+bitsandbytes
+accelerate
