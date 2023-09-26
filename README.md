@@ -73,5 +73,5 @@ Here we put the corrector components on GPU with id 0 and mPLUG-Owl on GPU with 
 
 
 ## Acknowledgement
-This repository benefits from [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO), [BLIP-2](https://huggingface.co/Salesforce/blip2-flan-t5-xxl), [LLaMA-Adapter](https://github.com/OpenGVLab/LLaMA-Adapter), and [ZeroFEC](https://github.com/khuangaf/ZeroFEC). Thanks for their awesome works.
+This repository benefits from [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO), [BLIP-2](https://huggingface.co/Salesforce/blip2-flan-t5-xxl), and [LLaMA-Adapter](https://github.com/OpenGVLab/LLaMA-Adapter). Thanks for their awesome works.
 
