@@ -1,17 +1,22 @@
-# Hallucination-Correction-for-MLLMs
+# Hallucination-Correction-for-MLLMs 🔧
 
-[[Demo]](https://05f3c84de881927054.gradio.live)
+<font size=7><div align='center' > <a href=https://github.com/BradyFU/Hallucination-Correction-for-MLLMs>**Paper [Coming Soon]**</a> | <a href="https://05f3c84de881927054.gradio.live">**Online Demo**</a></div></font>
 
 **Note**: The online demo is temporary and subject to regular updates for now.
 
 <p align="center">
-    <a href="[https://05f3c84de881927054.gradio.live](https://github.com/BradyFU/Hallucination-Correction-for-MLLMs/blob/main/assets/framework.jpg)"><img src="assets/framework.jpg" width="100%"></a> <br> Our framework in detail with a real case.
+    <img src="./assets/framework.jpg" width="96%" height="96%">
 </p>
 
-<img src="./assets/example.jpeg" width="96%" height="96%">
-
 ## News
-- [09/26] 🚀 We released our code and the online demo.
+- [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
+
+## Demo
+Please feel free to try our online [Demo](https://05f3c84de881927054.gradio.live)!
+
+<p align="center">
+<img src="./assets/example.jpeg" width="96%" height="96%">
+</p>
 
 ## Preliminary
 
