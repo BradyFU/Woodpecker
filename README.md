@@ -73,8 +73,5 @@ Here we put the corrector components on GPU with id 0 and mPLUG-Owl on GPU with 
 
 
 ## Acknowledgement
-- [BLIP-2](https://huggingface.co/Salesforce/blip2-flan-t5-xxl) We adopt a blip2-flan-t5-xxl as our VQA model.
-- [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl) The baseline MLLM we use in experiments. Thanks for the code and the great work.
-- [ZeroFEC](https://github.com/khuangaf/ZeroFEC) An inspiring work. We adopt their QA-to-Claim model and refer to part of their code.
-- [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO) The open-set object detector we use. Thanks for the great work.
-- [LLaMA-Adapter](https://github.com/OpenGVLab/LLaMA-Adapter) We refer to part of the code for the demo building.
+This repository benefits from [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO), [BLIP-2](https://huggingface.co/Salesforce/blip2-flan-t5-xxl), [LLaMA-Adapter](https://github.com/OpenGVLab/LLaMA-Adapter), and [ZeroFEC](https://github.com/khuangaf/ZeroFEC). Thanks for their awesome works.
+
