@@ -2,10 +2,10 @@
 
 [[Demo]](https://05f3c84de881927054.gradio.live)
 
-**Note**: The online demo is a temporary and will be updated regularly.
+**Note**: The online demo is temporary and subject to regular updates for now.
 
 <p align="center">
-    <a href="https://05f3c84de881927054.gradio.live"><img src="assets/framework.png" width="90%"></a> <br> Our framework in detail with a real case.
+    <a href="https://05f3c84de881927054.gradio.live"><img src="assets/framework.png" width="100%"></a> <br> Our framework in detail with a real case.
 </p>
 
 ## News
@@ -35,7 +35,7 @@ python -m spacy download en_core_web_sm
 
 ## Usage
 
-1. Inference
+**1. Inference**
 
 To make corrections based on an image and a text output from MLLM, run the inference code as follows:
 
@@ -50,9 +50,13 @@ python inference.py \
 ```
 The output text will be printed in the terminal, and intermediate results saved by default as ```./intermediate_view.json```.
 
-2. Demo setup
+***
 
-We use mPLUG-Owl as our default MLLM in experiments. If you wish to replicate the online demo, please clone the [project](https://github.com/X-PLUG/mPLUG-Owl) and modify the variables in (to be set). Then simply run:
+**2. Demo setup**
+
+We use mPLUG-Owl as our default MLLM in experiments. If you wish to replicate the online demo, please clone the [project](https://github.com/X-PLUG/mPLUG-Owl) and modify the variables in https://github.com/BradyFU/Hallucination-Correction-for-MLLMs/blob/c6826d82785828673064d73d9722fd71214f4b3c/gradio_demo.py#L7 and  https://github.com/BradyFU/Hallucination-Correction-for-MLLMs/blob/c6826d82785828673064d73d9722fd71214f4b3c/gradio_demo.py#L35-L36
+
+Then simply run:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0,1 python gradio_demo.py
