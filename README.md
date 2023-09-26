@@ -2,7 +2,7 @@
 
 [[Demo]](https://05f3c84de881927054.gradio.live)
 
-**Note**: The online demo is a temporary and will be updated regularly.
+**Note**: The online demo is temporary and subject to regular updates for now.
 
 <p align="center">
     <a href="https://05f3c84de881927054.gradio.live"><img src="assets/framework.png" width="90%"></a> <br> Our framework in detail with a real case.
