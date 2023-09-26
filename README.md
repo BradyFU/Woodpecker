@@ -5,7 +5,7 @@
 **Note**: The online demo is temporary and subject to regular updates for now.
 
 <p align="center">
-    <a href="https://05f3c84de881927054.gradio.live"><img src="assets/framework.png" width="100%"></a> <br> Our framework in detail with a real case.
+    <a href="https://05f3c84de881927054.gradio.live"><img src="assets/framework.jpg" width="90%"></a> <br> Our framework in detail with a real case.
 </p>
 
 ## News
