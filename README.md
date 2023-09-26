@@ -12,7 +12,7 @@ This is the first work to correct hallucination in multimodal large language mod
 - [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
 
 ## Demo
-Please feel free to try our online [Demo](https://05f3c84de881927054.gradio.live)!
+Please feel free to try our [Online Demo](https://05f3c84de881927054.gradio.live)!
 
 <p align="center">
 <img src="./assets/example.jpeg" width="96%" height="96%">
