@@ -2,11 +2,11 @@
 
 <font size=7><div align='center' > <a href=https://github.com/BradyFU/Hallucination-Correction-for-MLLMs>**Paper [Coming Soon]**</a> | <a href="https://05f3c84de881927054.gradio.live">**Online Demo**</a></div></font>
 
-**Note**: The online demo is temporary and subject to regular updates for now.
-
 <p align="center">
     <img src="./assets/framework.jpg" width="96%" height="96%">
 </p>
+
+This is the first work to correct hallucination in multimodal large language models. If you have any question, please feel free to email bradyfu24@gmail.com or add the weChat ID xjtupanda.
 
 ## News
 - [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
