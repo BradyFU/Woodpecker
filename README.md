@@ -8,6 +8,8 @@
     <a href="[https://05f3c84de881927054.gradio.live](https://github.com/BradyFU/Hallucination-Correction-for-MLLMs/blob/main/assets/framework.jpg)"><img src="assets/framework.jpg" width="100%"></a> <br> Our framework in detail with a real case.
 </p>
 
+<img src="./assets/example.jpeg" width="96%" height="96%">
+
 ## News
 - [09/26] 🚀 We released our code and the online demo.
 
