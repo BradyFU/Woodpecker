@@ -3,10 +3,6 @@ import openai
 import time
 
 NUM_SECONDS_TO_SLEEP = 0.5
-# 2. Do not mention entities that do not exist according to the 'Counting' supplementary information or entities related to the non-existent entities. Try to keep the original sentence through minimal modification.
-# 3. Try to keep the original sentence through minimal modification, and remove the sentence that mentions non-existent entities if necessary.
-# 8. Only include affirmative sentences and describe in a confident tone. 
-# 9. Simply output the regenerated passage and nothing else.
 PROMPT_TEMPLATE='''Given a passage and some supplementary information, you are required to correct and output the refined passage in a fluent and natural style, following these rules:
 1. The supplementary information may include some of the following parts:
     "Counting" information that specifies how many instances of a certain kind of entity exist, and their associated bounding boxes;

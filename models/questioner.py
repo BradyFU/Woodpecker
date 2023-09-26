@@ -4,7 +4,6 @@ import openai
 import time
 import spacy
 
-# Do not ask questions related to position or position relationship.
 NUM_SECONDS_TO_SLEEP = 0.5
 PROMPT_TEMPLATE='''Given a sentence and some entities connnected by periods, you are required to ask some relevant questions about the specified entities involved in the sentence, so that the questions can help to verify the factuality of the sentence.
 Questions may involve basic attributes such as colors, actions mentioned in the sentence. Do not ask questions involving object counts or the existence of object.
