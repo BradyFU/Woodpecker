@@ -44,35 +44,3 @@ class Corrector:
     def batch_correct(self, samples: List[Dict]):
 
         return [self.correct(sample) for sample in tqdm(samples, total=len(samples))]
-
-if __name__ == '__main__':
-    from types import SimpleNamespace
-    import json
-    model_args = {
-        'api_key': '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',
-        'api_base': 'https://api.openai-proxy.com/v1',
-        'val_model_path': '/data/xjtupanda/experiments/MM/projects/Hallu/BLIP/t5_ckpt',
-        'qa2c_model_path':'/data/xjtupanda/experiments/MM/projects/Hallu/ZeroFEC-master/ckpt/zerofec-qa2claim-t5-base',
-        'detector_config':"/data/xjtupanda/experiments/MM/projects/Hallu/GroundingDINO-main/groundingdino/config/GroundingDINO_SwinT_OGC.py",
-        'detector_model_path':"/data/xjtupanda/experiments/MM/projects/Hallu/GroundingDINO-main/weights/groundingdino_swint_ogc.pth",
-        'cache_dir': './cache_dir',
-}
-
-    model_args = SimpleNamespace(**model_args)
-
-    corrector = Corrector(model_args)
-    start_time = time.time()
-
-    sample = {
-    'img_path': "test_imgs/000000000034.jpg",
-    'input_desc': '''The scene features a lush green field filled with tall grass where a young zebra is grazing on the ground. In the field, there are several other zebras spread out and enjoying the greenery. Some zebras are closer to the camera while others are further away or partially hidden behind grass.
-There are a total of six zebras in the image, with one zebra being the focus point. They all appear to be contentedly eating grass in this picturesque setting.'''
-    }
-    corrected_sample = corrector.correct(sample)
-    with open('debug_gpu.json', 'w', encoding='utf-8') as file:
-        json.dump(corrected_sample, file, ensure_ascii=False, indent=4)
-    
-    end_time = time.time()
-
-    execution_time = end_time - start_time
-    print(f"代码运行时间: {execution_time} 秒")
