@@ -153,7 +153,7 @@ def create_multi_modal_demo():
     return instruct_demo
 
 description = """
-# Hallucination Correction for MLLMs🔧
+# Woodpecker: Hallucination Correction for MLLMs🔧
 **Note**: Due to network restrictions, it is recommended that the size of the uploaded image be less than 1M.
 """
 

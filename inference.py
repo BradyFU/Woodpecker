@@ -5,7 +5,7 @@ import json
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Hallucination Correction for MLLMs.')
+    parser = argparse.ArgumentParser(description="Code for 'Woodpecker: Hallucination Correction for MLLMs Hallucination Correction for MLLMs'.")
     parser.add_argument('--image-path', type=str, help="file path for the text to be corrected.")
     parser.add_argument('--text', type=str, help="text from MLLM to be corrected")
     parser.add_argument('--cache-dir', type=str, help="dir for caching intermediate image",
