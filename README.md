@@ -61,7 +61,7 @@ The output text will be printed in the terminal, and intermediate results saved 
 
 **2. Demo setup**
 
-We use mPLUG-Owl as our default MLLM in experiments. If you wish to replicate the online demo, please clone the [project](https://github.com/X-PLUG/mPLUG-Owl) and modify the variables in https://github.com/BradyFU/Hallucination-Correction-for-MLLMs/blob/c6826d82785828673064d73d9722fd71214f4b3c/gradio_demo.py#L7 and  https://github.com/BradyFU/Hallucination-Correction-for-MLLMs/blob/c6826d82785828673064d73d9722fd71214f4b3c/gradio_demo.py#L35-L36
+We use mPLUG-Owl as our default MLLM in experiments. If you wish to replicate the online demo, please clone the [project](https://github.com/X-PLUG/mPLUG-Owl) and modify the variables in https://github.com/BradyFU/Woodpecker/blob/e3fcac307cc5ff5a3dc079d9a94b924ebcdc2531/gradio_demo.py#L7 and  https://github.com/BradyFU/Woodpecker/blob/e3fcac307cc5ff5a3dc079d9a94b924ebcdc2531/gradio_demo.py#L35-L36
 
 Then simply run:
 
