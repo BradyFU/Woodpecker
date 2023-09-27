@@ -1,7 +1,7 @@
 # Woodpecker: Hallucination Correction for MLLMs 🔧
 
 <p align="center">
-    <img src="./assets/name.png" width="94%" height="94%">
+    <img src="./assets/name.png" width="90%" height="90%">
 </p>
 
 <font size=7><div align='center' > <a href="https://3f42ced93bd85313af.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Hallucination-Correction-for-MLLMs>**Paper [Coming Soon]**</a> </div></font>
