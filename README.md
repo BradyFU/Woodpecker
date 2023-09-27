@@ -30,7 +30,7 @@ Please feel free to try our [Online Demo](https://650e6545a414c6c48d.gradio.live
 
 ```bash
 conda create -n corrector python=3.10
-conda activate 
+conda activate corrector
 pip -r requirements.txt
 ```
 
