@@ -1,4 +1,4 @@
-# Hallucination-Correction-for-MLLMs 🔧
+# Woodpecker: Hallucination Correction for MLLMs 🔧
 
 <font size=7><div align='center' > <a href="https://3f42ced93bd85313af.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Hallucination-Correction-for-MLLMs>**Paper [Coming Soon]**</a> </div></font>
 
