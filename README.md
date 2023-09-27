@@ -4,7 +4,7 @@
     <img src="./assets/name.png" width="88%" height="88%">
 </p>
 
-<font size=7><div align='center' > <a href="https://3ffc041c79eb0f2064.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Hallucination-Correction-for-MLLMs>**Paper [Coming Soon]**</a> </div></font>
+<font size=7><div align='center' > <a href="https://3ffc041c79eb0f2064.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Woodpecker>**Paper [Coming Soon]**</a> </div></font>
 
 -----------------
 
