@@ -4,7 +4,7 @@
     <img src="./assets/name.png" width="88%" height="88%">
 </p>
 
-<font size=7><div align='center' > <a href="https://3f42ced93bd85313af.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Hallucination-Correction-for-MLLMs>**Paper [Coming Soon]**</a> </div></font>
+<font size=7><div align='center' > <a href="https://650e6545a414c6c48d.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Hallucination-Correction-for-MLLMs>**Paper [Coming Soon]**</a> </div></font>
 
 -----------------
 
@@ -18,7 +18,7 @@ This is the first work to correct hallucination in multimodal large language mod
 - [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
 
 ## Demo
-Please feel free to try our [Online Demo](https://3f42ced93bd85313af.gradio.live/)!
+Please feel free to try our [Online Demo](https://650e6545a414c6c48d.gradio.live/)!
 
 <p align="center">
 <img src="./assets/example.jpeg" width="96%" height="96%">
