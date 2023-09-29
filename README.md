@@ -4,7 +4,7 @@
     <img src="./assets/name.png" width="88%" height="88%">
 </p>
 
-<font size=7><div align='center' > <a href="https://dc4b208b9e1320423e.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Woodpecker>**Paper [Coming Soon]**</a> </div></font>
+<font size=7><div align='center' > <a href="https://bc0e1963aa5c75ec20.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Woodpecker>**Paper [Coming Soon]**</a> </div></font>
 
 -----------------
 
@@ -18,7 +18,7 @@ This is the first work to correct hallucination in multimodal large language mod
 - [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
 
 ## Demo
-Please feel free to try our [Online Demo](https://dc4b208b9e1320423e.gradio.live/)!
+Please feel free to try our [Online Demo](https://bc0e1963aa5c75ec20.gradio.live/)!
 
 <p align="center">
 <img src="./assets/example.jpeg" width="96%" height="96%">
