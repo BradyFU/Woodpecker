@@ -4,7 +4,7 @@
     <img src="./assets/name.png" width="88%" height="88%">
 </p>
 
-<font size=7><div align='center' > <a href="https://42976740ac53ddbe7d.gradio.live/">**Online Demo**</a> | <a href=https://github.com/BradyFU/Woodpecker>**Paper [Coming Soon]**</a> </div></font>
+<font size=7><div align='center' > <a href="https://42976740ac53ddbe7d.gradio.live/">**Online Demo [Paused due to insufficient GPUs]**</a> | <a href=https://github.com/BradyFU/Woodpecker>**Paper [Coming Soon]**</a> </div></font>
 
 -----------------
 
