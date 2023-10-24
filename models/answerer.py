@@ -1,3 +1,5 @@
+import os
+#os.environ["CUDA_VISIBLE_DEVICES"]="6"
 import torch
 from PIL import Image
 from transformers import Blip2Processor, Blip2ForConditionalGeneration
@@ -62,9 +64,8 @@ class Answerer:
         val_model_path = args.val_model_path
         self.args = args
         self.processor = Blip2Processor.from_pretrained(val_model_path)
-        # Makeshift measure. Put all modules on the same GPU.
         device_map = {
-            "query_tokens": 0,  
+            "query_tokens": 0,  # a number. used to set to 0.
             "vision_model":0,
             "language_model": 0,
             "language_projection": 0,
@@ -78,7 +79,6 @@ class Answerer:
         global_entity_dict = sample['entity_info']
         
         all_answers = []
-        
         for gen_qs in generated_qs:
             # border case: no question asked.
             if len(gen_qs) == 0:
@@ -86,7 +86,7 @@ class Answerer:
                 continue
             cur_answers = {}
             for cur_qs in gen_qs:
-                qs, entity = cur_qs # both qs and entity is also a str. They may contain multiple entities connected by dots.
+                qs, entity = cur_qs # qs is a str. entity is also a str. may contain multiple entity connected by periods.
                 entity_list = entity.split('.')
                 entity_list = [e.strip() for e in entity_list if e.strip()]
                 

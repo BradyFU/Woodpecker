@@ -1,7 +1,10 @@
 import os
+
 from typing import Dict
+from tqdm import tqdm
 from PIL import Image
 import numpy as np
+from collections import defaultdict
 import shortuuid
 from torchvision.ops import box_convert
 import torch
@@ -11,9 +14,12 @@ from PIL import Image
 import spacy
 
 
+
+
+
 BOX_TRESHOLD = 0.35     # used in detector api.
 TEXT_TRESHOLD = 0.25    # used in detector api.
-AREA_THRESHOLD = 0.02   # used to filter out too small object.
+AREA_THRESHOLD = 0.001   # used to filter out too small object.
 IOU_THRESHOLD = 0.95     # used to filter the same instance. greater than threshold means the same instance
 
 def in_dict(ent_dict, norm_box):
@@ -24,8 +30,8 @@ def in_dict(ent_dict, norm_box):
             return True
     return False
     
-def extract_detection(global_entity_dict, boxes, phrases, image_source, cache_dir):
-     
+def extract_detection(global_entity_dict, boxes, phrases, image_source, cache_dir, sample):
+        
     h, w, _ = image_source.shape
     boxes = boxes * torch.Tensor([w, h, w, h])
     xyxy = box_convert(boxes=boxes, in_fmt="cxcywh", out_fmt="xyxy").numpy()
@@ -35,7 +41,8 @@ def extract_detection(global_entity_dict, boxes, phrases, image_source, cache_di
     
     for entity, box, norm_box in zip(phrases, xyxy, normed_xyxy):
         # filter out too small object
-        if (norm_box[2]-norm_box[0]) * (norm_box[3]-norm_box[1]) < AREA_THRESHOLD:
+        thre = sample['area_threshold'] if 'area_threshold' in sample else AREA_THRESHOLD
+        if (norm_box[2]-norm_box[0]) * (norm_box[3]-norm_box[1]) < thre:
             continue
         # filter out object already in the dict
         if in_dict(global_entity_dict, norm_box):
@@ -113,12 +120,12 @@ class Detector:
                 model=self.model,
                 image=image,
                 caption=entity_str,
-                box_threshold=BOX_TRESHOLD,
+                box_threshold=sample['box_threshold'] if 'box_threshold' in sample else BOX_TRESHOLD,
                 text_threshold=TEXT_TRESHOLD,
                 device='cuda:0'
             )
             phrases = find_most_similar_strings(self.nlp, phrases, entity_list)    
-            global_entity_dict = extract_detection(global_entity_dict, boxes, phrases, image_source, self.cache_dir)
+            global_entity_dict = extract_detection(global_entity_dict, boxes, phrases, image_source, self.cache_dir, sample)
             
         sample['entity_info'] = global_entity_dict
         sample['entity_list'] = global_entity_list

@@ -7,6 +7,7 @@ import json
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Code for 'Woodpecker: Hallucination Correction for MLLMs Hallucination Correction for MLLMs'.")
     parser.add_argument('--image-path', type=str, help="file path for the text to be corrected.")
+    parser.add_argument('--query', type=str, help="text query for MLLM")
     parser.add_argument('--text', type=str, help="text from MLLM to be corrected")
     parser.add_argument('--cache-dir', type=str, help="dir for caching intermediate image",
                         default='./cache_dir')
@@ -36,11 +37,11 @@ if __name__ == '__main__':
 
     sample = {
     'img_path': args.image_path,
-    'input_desc': args.text
+    'input_desc': args.text,
+    'query': args.query
     }
     
     corrected_sample = corrector.correct(sample)
     print(corrected_sample['output'])
     with open('intermediate_view.json', 'w', encoding='utf-8') as file:
         json.dump(corrected_sample, file, ensure_ascii=False, indent=4)
-    

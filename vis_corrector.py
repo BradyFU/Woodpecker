@@ -7,6 +7,7 @@ from models.claim_generator import ClaimGenerator
 from models.refiner import Refiner
 from tqdm import tqdm
 from typing import List, Dict
+import time
 
 class Corrector:
     def __init__(self, args) -> None:

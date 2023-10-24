@@ -4,9 +4,9 @@ import openai
 import time
 
 NUM_SECONDS_TO_SLEEP = 0.5
-PROMPT_TEMPLATE='''Given a sentence, extract the existent entities within the sentence for me. 
+PROMPT_TEMPLATE='''Given a sentence, extract the entities within the sentence for me. 
 Extract the common objects and summarize them as general categories without repetition, merge essentially similar objects.
-Avoid extracting abstract or non-specific entities. Only extract concrete, certainly existent objects that fall in general categories and are described in a certain tone in the sentence.
+Avoid extracting abstract or non-specific entities. 
 Extract entity in the singular form. Output all the extracted types of items in one line and separate each object type with a period. If there is nothing to output, then output a single "None".
 
 Examples:
@@ -17,16 +17,16 @@ Output:
 man.motorcycle
 
 Sentence:
-There are a few people around, including one person standing close to the motorcyclist and another person further away, possibly a witness to or an emergency responder.
+There are a few people around, including one person standing close to the motorcyclist and another person further away.
 
 Output:
 person.motorcyclist
 
 Sentence:
-The motor vehicle appears damaged, with some parts of it scattered around the area.
+No, there is no car in the image.
 
 Output:
-motor vehicle
+car
 
 Sentence:
 The image depicts a group of animals, with a black dog, a white kitten, and a gray cat, sitting on a bed.

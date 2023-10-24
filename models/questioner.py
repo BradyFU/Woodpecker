@@ -4,13 +4,13 @@ import openai
 import time
 import spacy
 
+# Do not ask questions related to position or position relationship.
 NUM_SECONDS_TO_SLEEP = 0.5
 PROMPT_TEMPLATE='''Given a sentence and some entities connnected by periods, you are required to ask some relevant questions about the specified entities involved in the sentence, so that the questions can help to verify the factuality of the sentence.
 Questions may involve basic attributes such as colors, actions mentioned in the sentence. Do not ask questions involving object counts or the existence of object.
 When asking questions about attributes, try to ask simple questions that only involve one entity. 
 Ask questions that can be easily decided visually. Do not ask questions that require complex reasoning.
 Do not ask semantically similar questions. Do not ask questions only about scenes or places.
-Use "where" type questions to query the position information of the involved entities.
 Do not ask questions about uncertain or conjecture parts of the sentence, for example, the parts described with "maybe" or "likely", etc.
 It is no need to cover all the specified entities. If there is no question to ask, simply output a 'None'.
 When asking questions, do not assume the claims in the description as true in advance. Only ask questions relevant to the information in the sentence.
@@ -46,7 +46,7 @@ kitchen.man
 
 Questions:
 What does the man wear?&man
-Where is the man in the kitchen scene?&man.kitchen
+Is the man standing in the middle of the kitchen?&man.kitchen
 
 Sentence:
 {sent}
@@ -56,24 +56,6 @@ Entities:
 
 Questions:'''
 
-
-# this function transform a question into standard form. e.x. Where are the patatoes? -> Where be the potato ?
-def transform_question(nlp, question):
-    doc = nlp(question)
-    
-    new_question_tokens = []
-    
-    for token in doc:
-        # check if a word is a noun or verb
-        if token.pos_ in ["NOUN", "VERB", "AUX"]:
-            # if so, add its stem
-            new_question_tokens.append(token.lemma_)
-        else:
-            # if not, directly add it
-            new_question_tokens.append(token.text)
-    
-    # return new question
-    return ' '.join(new_question_tokens).strip()
 
 def remove_duplicates(res):
     qs_set = set()
@@ -112,10 +94,6 @@ def get_res(nlp, entity: str, sent: str, max_tokens: int=1024):
     res = [s.split('&') for s in res if s.lower() != 'none']
     entity_list = entity.split('.')
     
-    # filter out object count and position-related questions
-    #res = [s for s in res if 'how many' not in s[0].lower() and 'where' not in s[0].lower()]
-    
-    #assert all([len(s)==2 for s in res]), f"Format error (len!=2) in generated questions:\n {res}"
     res = [s for s in res if len(s)==2]
     res = remove_duplicates(res)
     res = [s for s in res if set(s[1].split('.')).issubset(set(entity_list)) ]

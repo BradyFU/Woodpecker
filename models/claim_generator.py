@@ -1,3 +1,5 @@
+import os
+#os.environ["CUDA_VISIBLE_DEVICES"]="6"
 from typing import Dict
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
@@ -74,6 +76,7 @@ class ClaimGenerator:
         # second part, counting info
         counting_claim = "Counting: \n"
         for entity, ent_info in sample['entity_info'].items():
+            counting_claim_list = []
             ent_counts = ent_info['total_count']
             if ent_counts == 0:
                 counting_claim += f"There is no {entity}.\n\n"
@@ -88,4 +91,3 @@ class ClaimGenerator:
         all_claim['counting'] = counting_claim
         sample['claim'] = all_claim     
         return sample
-    

@@ -1,4 +1,6 @@
+import argparse
 import os
+os.environ["CUDA_VISIBLE_DEVICES"]="0,1"
 import torch
 from transformers import AutoTokenizer
 from vis_corrector import Corrector
@@ -10,6 +12,7 @@ from mplug_owl.processing_mplug_owl import MplugOwlImageProcessor, MplugOwlProce
 
 from PIL import Image
 from types import SimpleNamespace
+import numpy as np
 import cv2
 import gradio as gr
 import uuid
@@ -24,7 +27,7 @@ Human: <image>
 Human: {question}
 AI: '''
 
-print('Initializing demo')
+print('Initializing Chat')
 
 # initialize corrector
 args_dict = {
@@ -40,7 +43,6 @@ args_dict = {
 model_args = SimpleNamespace(**args_dict)
 corrector = Corrector(model_args)
 
-
 # initialize mplug-Owl
 pretrained_ckpt = "MAGAer13/mplug-owl-llama-7b"
 model = MplugOwlForConditionalGeneration.from_pretrained(
@@ -54,7 +56,7 @@ processor = MplugOwlProcessor(image_processor, tokenizer)
 print('Initialization Finished')
 
 @torch.no_grad()
-def my_model_function(image, question):
+def my_model_function(image, question, box_threshold, area_threshold):
     # create a temp dir to save uploaded imgs
     temp_dir = "temp"
     os.makedirs(temp_dir, exist_ok=True)
@@ -66,7 +68,7 @@ def my_model_function(image, question):
     success = cv2.imwrite(temp_file_path, cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
     
     try:
-        output_text, output_image = model_predict(temp_file_path, question) 
+        output_text, output_image = model_predict(temp_file_path, question, box_threshold, area_threshold) # 你的模型预测函数
     finally:
         # remove temporary files.
         if os.path.exists(temp_file_path):
@@ -93,7 +95,7 @@ def get_owl_output(img_path, question):
     sentence = tokenizer.decode(res.tolist()[0], skip_special_tokens=True)
     return sentence
 
-def model_predict(image_path, question):
+def model_predict(image_path, question, box_threshold, area_threshold):
     
     temp_output_filepath = os.path.join("temp", str(uuid.uuid4()) + ".png")
     os.makedirs("temp", exist_ok=True)
@@ -101,7 +103,10 @@ def model_predict(image_path, question):
         owl_output = get_owl_output(image_path, question)
         corrector_sample = {
             'img_path': image_path,
-            'input_desc': owl_output
+            'input_desc': owl_output,
+            'query': question,
+            'box_threshold': box_threshold,
+            'area_threshold': area_threshold
         }
         corrector_sample = corrector.correct(corrector_sample)
         corrector_output = corrector_sample['output']
@@ -124,6 +129,12 @@ def create_multi_modal_demo():
             with gr.Column():
                 img = gr.Image(label='Upload Image')
                 question = gr.Textbox(lines=2, label="Prompt")
+                
+                with gr.Accordion(label='Detector parameters', open=True):
+                    box_threshold = gr.Slider(minimum=0, maximum=1,
+                                     value=0.35, label="Box threshold")
+                    area_threshold = gr.Slider(minimum=0, maximum=1,
+                                     value=0.02, label="Area threshold")
 
                 run_botton = gr.Button("Run")
 
@@ -131,7 +142,7 @@ def create_multi_modal_demo():
                 output_text = gr.Textbox(lines=10, label="Output")
                 output_img = gr.Image(label="Output Image", type='pil')
                 
-        inputs = [img, question]
+        inputs = [img, question, box_threshold, area_threshold]
         outputs = [output_text, output_img]
         
         examples = [
@@ -154,7 +165,9 @@ def create_multi_modal_demo():
 
 description = """
 # Woodpecker: Hallucination Correction for MLLMs🔧
-**Note**: Due to network restrictions, it is recommended that the size of the uploaded image be less than 1M.
+**Note**: Due to network restrictions, it is recommended that the size of the uploaded image be less than **1M**.
+
+Please refer to our [github](https://github.com/BradyFU/Woodpecker) for more details.
 """
 
 with gr.Blocks(css="h1,p {text-align: center;}") as demo:
@@ -162,7 +175,4 @@ with gr.Blocks(css="h1,p {text-align: center;}") as demo:
     with gr.TabItem("Multi-Modal Interaction"):
         create_multi_modal_demo()
 
-
 demo.queue(api_open=False).launch(share=True)
-
-
