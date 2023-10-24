@@ -9,7 +9,7 @@
 -----------------
 
 <p align="center">
-    <img src="./assets/framework.jpg" width="96%" height="96%">
+    <img src="./assets/framework.png" width="96%" height="96%">
 </p>
 
 This is the first work to correct hallucination in multimodal large language models. If you have any question, please feel free to email bradyfu24@gmail.com or add weChat ID xjtupanda.
