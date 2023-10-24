@@ -30,7 +30,7 @@ We perform experiments based on four baseline models:
 - [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl)
 - [Otter](https://github.com/Luodian/Otter)
 
-We showcase some of our experimental results below. For more details, please check out our paper.
+We showcase our experimental results below. For more details, please check out our paper.
 
 ### POPE Result
 
