@@ -1,7 +1,7 @@
-# Woodpecker: Hallucination Correction for MLLMs 🔧
+# Woodpecker: Hallucination Correction for Multimodal Large Language Models 🔧
 
 <p align="center">
-    <img src="./assets/name.png" width="88%" height="88%">
+    <img src="./assets/woodpecker.png" width="88%" height="88%">
 </p>
 
 <font size=7><div align='center' > <a href="https://42976740ac53ddbe7d.gradio.live/">**Online Demo [Paused due to insufficient GPUs]**</a> | <a href=https://github.com/BradyFU/Woodpecker>**Paper [Coming Soon]**</a> </div></font>
@@ -13,9 +13,6 @@
 </p>
 
 This is the first work to correct hallucination in multimodal large language models. If you have any question, please feel free to email bradyfu24@gmail.com or add weChat ID xjtupanda.
-
-## News
-- [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
 
 ## Contents
 - [Experimental Results](#experimental-results)
