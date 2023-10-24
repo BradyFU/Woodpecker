@@ -17,6 +17,12 @@ This is the first work to correct hallucination in multimodal large language mod
 ## News
 - [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
 
+## Contents
+- [Experimental Results](#experimental-results)
+- [Demo](#demo)
+- [Preliminary](#preliminary)
+- [Usage](#usage)
+
 ## Experimental Results
 We perform experiments based on four baseline models:
 - [LLaVA](https://github.com/haotian-liu/LLaVA)
