@@ -18,17 +18,35 @@ This is the first work to correct hallucination in multimodal large language mod
 - [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
 
 ## Experimental Results
-We showcase some of our experimental results below.
+We perform experiments based on four baseline models:
+- [LLaVA](https://github.com/haotian-liu/LLaVA)
+- [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)
+- [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl)
+- [Otter](https://github.com/Luodian/Otter)
 
+We showcase some of our experimental results below. For more details, please check out our paper.
+
+### POPE Result
+
+We list our results evaluated on the POPE benchmark below. This part mainly focuses on benchmarking levels of object-level hallucinations.
 <p align="center">
-    <img src="./assets/tab1.png" width="96%" height="96%">
+    <img src="./assets/tab1.png" >
 </p>
 
+### MME Result
 
-<figure>
-  <img src="./assets/tab1.png" alt="your-alt-text-here">
-  <figcaption>fig here</figcaption>
-</figure>
+We list our results evaluated on the MME benchmark below. This part addresses both object- and attribute-level hallucinations.
+<p align="center">
+    <img src="./assets/tab2.png" width="80%">
+</p>
+
+### LLaVA-QA90 Result
+
+We also propose to perform open-ended evaluation directly via the recently opened GPT-4V interface. We design two metrics and evaluate on the LLaVA-QA90 benchmark. The results are shown below.
+<p align="center">
+    <img src="./assets/tab3.png" width="60%">
+</p>
+
 
 ## Demo
 Please feel free to try our [Online Demo](https://42976740ac53ddbe7d.gradio.live/)!
