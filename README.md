@@ -17,6 +17,19 @@ This is the first work to correct hallucination in multimodal large language mod
 ## News
 - [09-26] We release our code and the online demo. The paper will be coming soon! 🔥🔥🔥
 
+## Experimental Results
+We showcase some of our experimental results below.
+
+<p align="center">
+    <img src="./assets/tab1.png" width="96%" height="96%">
+</p>
+
+
+<figure>
+  <img src="./assets/tab1.png" alt="your-alt-text-here">
+  <figcaption>fig here</figcaption>
+</figure>
+
 ## Demo
 Please feel free to try our [Online Demo](https://42976740ac53ddbe7d.gradio.live/)!
 
