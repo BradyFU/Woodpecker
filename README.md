@@ -36,7 +36,7 @@ We showcase our experimental results below. For more details, please check out o
 
 We list our results evaluated on the POPE benchmark below. This part mainly focuses on benchmarking levels of object-level hallucinations.
 <p align="center">
-    <img src="./assets/tab1.png" >
+    <img src="./assets/tab1.png" width="90%">
 </p>
 
 ### MME Result
