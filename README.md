@@ -23,6 +23,10 @@ We perform experiments based on four baseline models:
 
 The experimental results are shown below. For more details, please check out our paper.
 
+<p align="center">
+    <img src="./assets/example.png" width="80%">
+</p>
+
 ### POPE Result
 
 This part mainly focuses on benchmarking levels of object-level hallucinations.
