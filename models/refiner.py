@@ -4,13 +4,13 @@ import openai
 import time
 from tqdm import tqdm
 
-NUM_SECONDS_TO_SLEEP = 0.5
+NUM_SECONDS_TO_SLEEP = 0.3
 PROMPT_TEMPLATE='''Given a query, a passage and some supplementary information, you are required to correct and output the refined passage in a fluent and natural style, following these rules:
 1. The supplementary information may include some of the following parts:
     "Counting" information that specifies how many instances of a certain kind of entity exist, and their associated bounding boxes;
     "Specific" information that describes attribute information specific to each entity instance, including bounding boxes, colors, etc. The information is arranged in the form of "entity 1: [bbox] "info of this entity". Note that the entity in "Specific" information corresponds to that in the "Counting" information.
     "Overall" information that may involve information about multiple entity objects. 
-2. Correct the sentences in the passage if they are inconcistent with the supplementary information, with as few modifications as possible. When doing description tasks, remove descriptions of non-existent entities according to the supplementary information.
+2. Correct the sentences in the passage if they are inconcistent with the supplementary information.
 3. The number of entitie instances should match the number in the 'Counting' information. Also correct the number counts if the number stated in the original sentence does not match the counting information.
 4. In the refined passage, when describing entities mentioned in the "Specific" supplementary information, add their associated bounding boxes in parentheses right after them, in the form of "entity([bbox])". If multiple entities of the same kind are mentioned, then seperate the box with ';', in the form of "entity([bbox1];[bbox2])"
 5. When deriving position relationships between entity instances, try to also use the bounding boxes information, which are represented as [x1, y1, x2, y2] with floating numbers ranging from 0 to 1. These values correspond to the top left x1, top left y1, bottom right x2, and bottom right y2. 
@@ -46,39 +46,6 @@ Yes, there is a snowboard([0.498, 0.555, 0.513, 0.577]) in the image. The image 
 
 -------------------
 
-Supplementary information:
-Counting: 
-There are 1 person.
-person 1: [0.196, 0.257, 0.399, 0.689]
-
-
-Query:
-Is there a person in the image?
-
-Passage:
-No, there is no person in the image.
-
-Refined passage: 
-Yes, there is a person([0.196, 0.257, 0.399, 0.689]) in the image.
-
--------------------
-
-Supplementary information:
-Counting: 
-There are 1 duck.
-duck 1: [0.293, 0.231, 0.872, 0.885]
-
-
-Query:
-Is there a duck in the image?
-
-Passage:
-No, there is no duck in the image.
-
-Refined passage: 
-Yes, there is a duck([0.293, 0.231, 0.872, 0.885]) in the image.
-
--------------------
 Supplementary information:
 Counting: 
 There are 2 car.
@@ -254,12 +221,17 @@ Describe the image in detail.
 
 Passage:
 The image shows a group of young children, all wearing black shirts, sitting in a grassy field. They appear to be having a good time as they each hold two white frisbees. 
+
 There's a total of seven children, ranging in age from young toddlers to older children, scattered throughout the scene. Some of the children are standing while others are sitting, enjoying their time in the field. 
+
 In the background, there are several other items, such as a couple of backpacks placed near the field, and a handbag placed further back in the scene.
 
 Refined passage: 
 The image shows a group of five children([0.001, 0.216, 0.258, 0.935];[0.573, 0.251, 0.98, 0.813];[0.569, 0.313, 0.701, 0.662];[0.31, 0.259, 0.582, 0.775];[0.224, 0.283, 0.401, 0.663]) sitting in a grassy field([0.001, 0.444, 0.998, 0.997]). The children are wearing black shirts. Some of the children([0.573, 0.251, 0.98, 0.813];[0.31, 0.259, 0.582, 0.775]) are holding a white frisbee([0.392, 0.473, 0.569, 0.713];[0.72, 0.486, 0.941, 0.76]).
+
 There's a total of five children, ranging in age from young toddlers to older children, scattered throughout the scene. All the children are sitting, enjoying their time in the field. 
+
+There is no backpack or handbag in the scene.
 
 -------------------
 
@@ -301,60 +273,13 @@ Describe this image.
 
 Passage:
 The image features a horse and rider navigating a muddy pond during a horse race. The horse is galloping through the water, with its rider firmly seated on its back. The rider is wearing a helmet, which is essential for safety during such events.
+
 There are several other horses in the scene, some closer to the foreground and others further back. The horses are spread out across the pond, with some closer to the left side and others closer to the right side. The overall atmosphere of the scene is lively and exciting, as the horses and riders compete in the muddy pond.
 
 Refined passage: 
 The image features a horse([0.387, 0.227, 0.687, 0.798]) and a rider([0.479, 0.124, 0.654, 0.606]) navigating a muddy pond([0.003, 0.601, 0.997, 0.995]) during a horse race. The horse is galloping in the water. The rider is seated on the horse. The rider is wearing a helmet([0.504, 0.126, 0.552, 0.179]), which is essential for safety during such events.
 
--------------------
-
-Supplementary information:
-Counting: 
-There are 1 man.
-man 1: [0.39, 0.064, 0.731, 0.726]
-
-There are 1 motorcycle.
-motorcycle 1: [0.118, 0.328, 0.932, 0.989]
-
-There are 1 road.
-road 1: [0.001, 0.799, 0.998, 0.997]
-
-There are 1 helmet.
-helmet 1: [0.469, 0.066, 0.58, 0.263]
-
-There is no turn.
-
-There is no car.
-
-There are 1 tree.
-tree 1: [0.114, 0.066, 0.933, 0.987]
-
-Specific:
-man 1: [0.39, 0.064, 0.731, 0.726] The man is riding a motorcycle. The man is wearing a black jacket. The man is riding a motorcycle. The man is in the process of riding a motorcycle. The man is preparing to ride his motorcycle. The man is turning a motorcycle. A corner is the man preparing to turn. The man is likely preparing to ride his motorcycle. A corner is the man likely preparing to turn. The man is likely preparing to turn with his motorcycle.
-
-motorcycle 1: [0.118, 0.328, 0.932, 0.989] The motorcycle is green.
-
-road 1: [0.001, 0.799, 0.998, 0.997] A fence surrounds the road.
-
-tree 1: [0.114, 0.066, 0.933, 0.987] The grassy field adds to the scenic atmosphere of the image.
-
-Overall:
-The man is riding on the road.
-The handlebars is the man likely preparing to turn the motorcycle with.
-The motorcycle is parked on the road.
-The man is riding on the road.
-
-
-Query:
-Describe this image.
-
-Passage:
-The image features a man riding a motorcycle down a road, with a green motorcycle parked nearby. The man is wearing a helmet and is in the process of turning the motorcycle, likely preparing to make a turn. 
-
-There are several cars visible in the scene, with some parked along the side of the road and others driving by. The motorcycle is parked on the right side of the road, while the man is riding on the left side. The road is surrounded by trees, adding to the scenic atmosphere of the image.
-
-Refined passage: 
-The image features a man([0.39, 0.064, 0.731, 0.726]) riding a motorcycle([0.118, 0.328, 0.932, 0.989]) on a road([0.001, 0.799, 0.998, 0.997]). The man is wearing a helmet([0.469, 0.066, 0.58, 0.263]) and is in the process of turning the motorcycle, likely preparing to make a turn. 
+There are no other horses in the scene.
 
 -------------------
 
@@ -381,7 +306,7 @@ def get_output(query: str, text: str, sup_info: str, max_tokens: int=4096):
                     'role': 'user',
                     'content': content,
                 }],
-                temperature=0.2,  
+                temperature=0.1,  
                 max_tokens=max_tokens,
             )
             break
