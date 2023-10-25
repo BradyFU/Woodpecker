@@ -4,7 +4,7 @@
     <img src="./assets/woodpecker.png" width="80%" height="80%">
 </p>
 
-<font size=7><div align='center' > <a href="https://42976740ac53ddbe7d.gradio.live/">**Online Demo [paused due to insufficient GPUs, open soon]**</a> | <a href="https://arxiv.org/pdf/2310.16045.pdf">**Paper**</a> </div></font>
+<font size=7><div align='center' > <a href="https://21527a47f03813481c.gradio.live/">**Online Demo**</a> | <a href="https://arxiv.org/pdf/2310.16045.pdf">**Paper**</a> </div></font>
 
 -----------------
 
@@ -50,7 +50,7 @@ We also propose to perform open-ended evaluation directly via the recently opene
 
 
 ## Demo
-Please feel free to try our [Online Demo [paused due to insufficient GPUs, open soon]](https://42976740ac53ddbe7d.gradio.live/)!
+Please feel free to try our [Online Demo](https://21527a47f03813481c.gradio.live/)!
 
 <p align="center">
 <img src="./assets/example_demo.png" width="96%" height="96%">
