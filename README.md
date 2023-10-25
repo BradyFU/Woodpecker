@@ -113,3 +113,16 @@ Here we put the corrector components on GPU with id 0 and mPLUG-Owl on GPU with 
 ## Acknowledgement
 This repository benefits from [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO), [BLIP-2](https://huggingface.co/Salesforce/blip2-flan-t5-xxl), and [LLaMA-Adapter](https://github.com/OpenGVLab/LLaMA-Adapter). Thanks for their awesome works.
 
+
+
+## 📑Citation
+If you find our projects helpful to your research, please consider citing:
+```
+@article{yin2023woodpecker,
+  title={Woodpecker: Hallucination Correction for Multimodal Large Language Models},
+  author={Yin Shukang, Fu Chaoyou, Zhao Sirui, Xu Tong, Wang Hao, Sui Dianbo, Shen Yunhang, Li Ke, Sun Xing and Chen Enhong},
+  journal={arXiv preprint arXiv:2310.16045},
+  year={2023}
+}
+```
+
