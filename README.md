@@ -24,7 +24,7 @@ We perform experiments based on four baseline models:
 The experimental results are shown below. For more details, please check out our paper.
 
 <p align="center">
-    <img src="./assets/example.png" width="90%">
+    <img src="./assets/example.png" width="96%" height="96%">
 </p>
 
 ### POPE Result
