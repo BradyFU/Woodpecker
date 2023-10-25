@@ -10,7 +10,7 @@ PROMPT_TEMPLATE='''Given a query, a passage and some supplementary information, 
     "Counting" information that specifies how many instances of a certain kind of entity exist, and their associated bounding boxes;
     "Specific" information that describes attribute information specific to each entity instance, including bounding boxes, colors, etc. The information is arranged in the form of "entity 1: [bbox] "info of this entity". Note that the entity in "Specific" information corresponds to that in the "Counting" information.
     "Overall" information that may involve information about multiple entity objects. 
-2. Correct the sentences in the passage if they are inconcistent with the supplementary information.
+2. Correct the sentences in the passage if they are inconsistent with the supplementary information.
 3. The number of entitie instances should match the number in the 'Counting' information. Also correct the number counts if the number stated in the original sentence does not match the counting information.
 4. In the refined passage, when describing entities mentioned in the "Specific" supplementary information, add their associated bounding boxes in parentheses right after them, in the form of "entity([bbox])". If multiple entities of the same kind are mentioned, then seperate the box with ';', in the form of "entity([bbox1];[bbox2])"
 5. When deriving position relationships between entity instances, try to also use the bounding boxes information, which are represented as [x1, y1, x2, y2] with floating numbers ranging from 0 to 1. These values correspond to the top left x1, top left y1, bottom right x2, and bottom right y2. 
