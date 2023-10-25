@@ -87,6 +87,7 @@ To make corrections based on an image and a text output from MLLM, run the infer
 ```Shell
 python inference.py \
         --image-path {path/to/image} \
+        --query "Some query.(e.x. Describe this image.)" \
         --text "Some text to be corrected." \
         --detector-config "path/to/GroundingDINO_SwinT_OGC.py" \
         --detector-model "path/to/groundingdino_swint_ogc.pth" \
