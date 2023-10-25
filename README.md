@@ -53,7 +53,7 @@ We also propose to perform open-ended evaluation directly via the recently opene
 Please feel free to try our [Online Demo [paused due to insufficient GPUs, open soon]](https://42976740ac53ddbe7d.gradio.live/)!
 
 <p align="center">
-<img src="./assets/example.jpeg" width="96%" height="96%">
+<img src="./assets/example_demo.png" width="96%" height="96%">
 </p>
 
 ## Preliminary
