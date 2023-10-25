@@ -16,40 +16,32 @@
 
 This is the first work to correct hallucination in multimodal large language models. If you have any question, please feel free to email bradyfu24@gmail.com or add weChat ID xjtupanda.
 
-## Contents
-- [Experimental Results](#experimental-results)
-- [Demo](#demo)
-- [Preliminary](#preliminary)
-- [Usage](#usage)
 
-## Experimental Results
+## Evaluation
 We perform experiments based on four baseline models:
-- [LLaVA](https://github.com/haotian-liu/LLaVA)
-- [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)
-- [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl)
-- [Otter](https://github.com/Luodian/Otter)
+- [LLaVA](https://github.com/haotian-liu/LLaVA), [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4), [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), [Otter](https://github.com/Luodian/Otter)
 
-We showcase our experimental results below. For more details, please check out our paper.
+The experimental results are shown below. For more details, please check out our paper.
 
 ### POPE Result
 
-We list our results evaluated on the POPE benchmark below. This part mainly focuses on benchmarking levels of object-level hallucinations.
+This part mainly focuses on benchmarking levels of object-level hallucinations.
 <p align="center">
-    <img src="./assets/tab1.png" width="90%">
+    <img src="./assets/tab1.png" width="80%">
 </p>
 
 ### MME Result
 
-We list our results evaluated on the MME benchmark below. This part addresses both object- and attribute-level hallucinations.
+This part focuses on both object- and attribute-level hallucinations.
 <p align="center">
-    <img src="./assets/tab2.png" width="80%">
+    <img src="./assets/tab2.png" width="70%">
 </p>
 
 ### LLaVA-QA90 Result
 
-We also propose to perform open-ended evaluation directly via the recently opened GPT-4V interface. We design two metrics and evaluate on the LLaVA-QA90 benchmark. The results are shown below.
+We also propose to perform open-ended evaluation directly via the recently opened GPT-4V interface. We design two metrics: accuracy and detailedness.
 <p align="center">
-    <img src="./assets/tab3.png" width="60%">
+    <img src="./assets/tab3.png" width="50%">
 </p>
 
 
