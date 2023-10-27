@@ -63,7 +63,7 @@ Please feel free to try our [Online Demo [pause due to insufficient GPUs]](https
 ```bash
 conda create -n corrector python=3.10
 conda activate corrector
-pip -r requirements.txt
+pip install -r requirements.txt
 ```
 
 2. Install required packages and models
