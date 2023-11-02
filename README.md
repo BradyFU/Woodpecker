@@ -4,7 +4,8 @@
     <img src="./assets/woodpecker.png" width="75%" height="75%">
 </p>
 
-<font size=7><div align='center' > <a href="https://arxiv.org/pdf/2310.16045.pdf">**Paper**</a> | <a href="https://github.com/BradyFU/Woodpecker">**[Online Demo](https://5b9519c65cf7c7b94a.gradio.live)**</a>  </div></font>
+
+<font size=7><div align='center' > :grapes: \[[Read our arXiv Paper](https://arxiv.org/pdf/2310.16045.pdf)\] &nbsp; :apple: \[[Try our Demo](https://5b9519c65cf7c7b94a.gradio.live)\] </div></font>
 
 -----------------
 
