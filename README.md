@@ -18,7 +18,7 @@
 This is the first work to correct hallucination in multimodal large language models. If you have any question, please feel free to email bradyfu24@gmail.com or add weChat ID xjtupanda.
 
 
-## Evaluation
+## 🌋 Evaluation
 We perform experiments based on four baseline models:
 - [LLaVA](https://github.com/haotian-liu/LLaVA), [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), [Otter](https://github.com/Luodian/Otter), [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)
 
@@ -50,14 +50,14 @@ We also propose to perform open-ended evaluation directly via the recently opene
 </p>
 
 
-## Demo
+## ▶️ Demo
 Please feel free to try our [Online Demo](https://5b9519c65cf7c7b94a.gradio.live)!
 
 <p align="center">
 <img src="./assets/example_demo.png" width="96%" height="96%">
 </p>
 
-## Preliminary
+## 🛠️ Preliminary
 
 1. Create conda environment
 
@@ -79,7 +79,7 @@ python -m spacy download en_core_web_sm
 ```
 - For our **Open-set Detector**. Install GroundingDINO following the instructions in [Link](https://github.com/IDEA-Research/GroundingDINO).
 
-## Usage
+## ⭐ Usage
 
 **1. Inference**
 
@@ -112,12 +112,12 @@ Here we put the corrector components on GPU with id 0 and mPLUG-Owl on GPU with 
 
 
 
-## Acknowledgement
+## 🌻 Acknowledgement
 This repository benefits from [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), [GroundingDINO](https://github.com/IDEA-Research/GroundingDINO), [BLIP-2](https://huggingface.co/Salesforce/blip2-flan-t5-xxl), and [LLaMA-Adapter](https://github.com/OpenGVLab/LLaMA-Adapter). Thanks for their awesome works.
 
 
 
-## 📑Citation
+## 📑 Citation
 If you find our project helpful to your research, please consider citing:
 ```
 @article{yin2023woodpecker,
