@@ -1,7 +1,7 @@
 # Woodpecker: Hallucination Correction for Multimodal Large Language Models
 
 <p align="center">
-    <img src="./assets/woodpecker.png" width="80%" height="80%">
+    <img src="./assets/woodpecker.png" width="75%" height="75%">
 </p>
 
 <font size=7><div align='center' > <a href="https://arxiv.org/pdf/2310.16045.pdf">**Paper**</a> | <a href="https://github.com/BradyFU/Woodpecker">**[Online Demo](https://5b9519c65cf7c7b94a.gradio.live)**</a>  </div></font>
