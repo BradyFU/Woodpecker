@@ -28,21 +28,21 @@ The experimental results are shown below. For more details, please check out [ou
     <img src="./assets/example.png" width="96%" height="96%">
 </p>
 
-### POPE Result
+### 📍 POPE Result
 
 This part focuses on object-level hallucinations.
 <p align="center">
     <img src="./assets/tab1.png" width="70%">
 </p>
 
-### MME Result
+### 📍 MME Result
 
 This part focuses on both object- and attribute-level hallucinations.
 <p align="center">
     <img src="./assets/tab2.png" width="60%">
 </p>
 
-### LLaVA-QA90 Result
+### 📍 LLaVA-QA90 Result
 
 We also propose to perform open-ended evaluation directly via the recently opened GPT-4V interface. We design two metrics: accuracy and detailedness.
 <p align="center">
