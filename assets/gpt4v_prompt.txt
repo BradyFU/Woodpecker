@@ -1,0 +1,26 @@
+You are required to score the performance of two AI assistants in describing a given image. You should pay extra attention to the hallucination, which refers to the part of descriptions that are inconsistent with the image content, such as claiming the existence of something not present in the image or describing incorrectly in terms of the counts, positions, or colors of objects in the image. Note that the descriptions may be accompanied by bounding boxes, indicating the position of objects in the image, which are represented as [x1, y1, x2, y2] with floating numbers ranging from 0 to 1. These values correspond to the top left x1, top left y1, bottom right x2, and bottom right y2. 
+Please rate the responses of the assistants on a scale of 1 to 10, where a higher score indicates better performance, according to the following criteria:
+1: Accuracy: whether the response is accurate with respect to the image content. Responses with fewer hallucinations should be given higher scores.
+2: Detailedness: whether the response is rich in necessary details. Note that hallucinated descriptions should not count as necessary details.
+Please output a single line for each criterion, containing only two values indicating the scores for Assistant 1 and 2, respectively. The two scores are separated by a space. Following the scores, please provide an explanation of your evaluation, avoiding any potential bias and ensuring that the order in which the responses were presented does not affect your judgment.
+
+
+[Assistant 1]
+{response 1}
+
+[End of Assistant 1]
+
+[Assistant 2]
+{response 2}
+
+[End of Assistant 2]
+
+Output format:
+
+Accuracy:
+Scores of the two answers:
+Reason:
+
+Detailedness:
+Scores of the two answers:
+Reason:
