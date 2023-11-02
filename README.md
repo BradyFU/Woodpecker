@@ -22,7 +22,7 @@ This is the first work to correct hallucination in multimodal large language mod
 We perform experiments based on four baseline models:
 - [LLaVA](https://github.com/haotian-liu/LLaVA), [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), [Otter](https://github.com/Luodian/Otter), [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)
 
-The experimental results are shown below. For more details, please check out our paper.
+The experimental results are shown below. For more details, please check out [our paper](https://arxiv.org/pdf/2310.16045.pdf).
 
 <p align="center">
     <img src="./assets/example.png" width="96%" height="96%">
@@ -30,7 +30,7 @@ The experimental results are shown below. For more details, please check out our
 
 ### POPE Result
 
-This part mainly focuses on benchmarking levels of object-level hallucinations.
+This part focuses on object-level hallucinations.
 <p align="center">
     <img src="./assets/tab1.png" width="70%">
 </p>
