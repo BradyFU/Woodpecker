@@ -5,7 +5,7 @@
 </p>
 
 
-<font size=7><div align='center' > :grapes: \[[Read our arXiv Paper](https://arxiv.org/pdf/2310.16045.pdf)\] &nbsp; :apple: \[[Try our Demo](https://a626b178e8dfff24de.gradio.live/)\] </div></font>
+<font size=7><div align='center' > :grapes: \[[Read our arXiv Paper](https://arxiv.org/pdf/2310.16045.pdf)\] &nbsp; :apple: \[[Try our Demo](https://5ff908c02332efb036.gradio.live/)\] </div></font>
 
 -----------------
 
@@ -51,7 +51,7 @@ We also propose to perform open-ended evaluation directly via the recently opene
 
 
 ## ▶️ Demo
-Please feel free to try our [Online Demo](https://a626b178e8dfff24de.gradio.live/)!
+Please feel free to try our [Online Demo](https://5ff908c02332efb036.gradio.live/)!
 
 <p align="center">
 <img src="./assets/example_demo.png" width="96%" height="96%">
