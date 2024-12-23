@@ -120,11 +120,15 @@ This repository benefits from [mPLUG-Owl](https://github.com/X-PLUG/mPLUG-Owl), 
 ## 📑 Citation
 If you find our project helpful to your research, please consider citing:
 ```
-@article{yin2023woodpecker,
+@article{yin2024woodpecker,
   title={Woodpecker: Hallucination correction for multimodal large language models},
   author={Yin, Shukang and Fu, Chaoyou and Zhao, Sirui and Xu, Tong and Wang, Hao and Sui, Dianbo and Shen, Yunhang and Li, Ke and Sun, Xing and Chen, Enhong},
-  journal={arXiv preprint arXiv:2310.16045},
-  year={2023}
+  journal={Science China Information Sciences},
+  volume={67},
+  number={12},
+  pages={220105},
+  year={2024},
+  publisher={Springer}
 }
 ```
 
